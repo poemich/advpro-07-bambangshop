@@ -58,12 +58,12 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement delete function in Subscriber repository.`
     -   [x] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [x] Commit: `Create Notification service struct skeleton.`
+    -   [x] Commit: `Implement subscribe function in Notification service.`
+    -   [x] Commit: `Implement subscribe function in Notification controller.`
+    -   [x] Commit: `Implement unsubscribe function in Notification service.`
+    -   [x] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -88,5 +88,14 @@ This is the place for you to write reflections:
    A: The combination of a singleton (implemented via lazy_static) with DashMap is ideal because it guarantees thread safety without adding extra complexity. Lazy_static ensures that only a single instance of the data store is created, while DashMap provides safe concurrent access to that instance. A standard HashMap would require additional synchronization mechanisms such as mutexes, which could complicate the code and potentially degrade performance. DashMap inherently manages concurrent read and write operations efficiently. The design leverages Rust’s strengths in safe concurrency while maintaining clarity in the code. Overall, this approach offers simplicity, efficiency, and robust thread safety for the application.
 
 #### Reflection Publisher-2
+
+1. Q: In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?  
+   A: Separating Service and Repository from the Model adheres to the Single Responsibility Principle, ensuring that each component focuses on a single task. By doing so, the Repository is solely responsible for data access and persistence, while the Service encapsulates business logic. This separation makes the code more modular and easier to maintain. It also improves testability since each module can be tested independently with well-defined interfaces. Moreover, clear separation enhances code readability and can help prevent tightly coupled code, leading to fewer bugs during future updates. Overall, it provides a more robust and scalable architecture for large applications.
+
+2. Q: What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?  
+   A: If we rely solely on the Model to handle all responsibilities, the code can quickly become overly complex and harder to understand. The Model would have to manage data storage, retrieval, and business logic simultaneously, leading to a violation of the separation of concerns principle. This would likely result in tightly coupled code, where changes in one part may inadvertently affect another part. Additionally, testing and maintenance become challenging because issues are not isolated to a specific layer. Over time, as the application grows, scaling and refactoring the code would be significantly more difficult. In summary, using only the Model would negatively impact code structure, readability, and overall maintainability.
+
+3. Q: Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.  
+   A: Postman has proven to be an invaluable tool for testing API endpoints quickly and efficiently. It allows me to structure requests, inspect responses, and simulate various client scenarios without writing custom code. The Collections feature is especially helpful as it organizes related API calls into a single, manageable suite for easier sharing and collaboration. Additionally, the automated testing capabilities in Postman let me write scripts for regression tests, ensuring that each endpoint behaves as expected after changes. This robust set of features not only speeds up the development cycle but also improves the overall quality of the application. In essence, Postman is instrumental in both my current project and future software engineering endeavors.
 
 #### Reflection Publisher-3
